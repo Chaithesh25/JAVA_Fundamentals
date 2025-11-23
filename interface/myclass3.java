@@ -1,15 +1,26 @@
+interface   computer {
+      
+    void display();
+}
 
-class Laptop {
+class Laptop implements computer{
 
-    public void Start() {
+    public void display() {
         System.out.println("Lenovo loq");
+    }
+}
+
+class desktop implements  computer{
+
+    public void display() {
+        System.out.println("DESKTOP");
     }
 }
 
 class developer {
 
-    public void developing(Laptop la1) {
-        la1.Start();
+    public void developing(computer la1) {
+        la1.display();
     }
 }
 
@@ -18,8 +29,9 @@ class myclass3 {
     public static void main(String[] args) {
 
         developer dp = new developer();
+        computer dt = new desktop();
 
-        Laptop la = new Laptop();
+        computer la = new Laptop();
 
 
         dp.developing(la);
